@@ -1,0 +1,8 @@
+:root
+{
+  font-size: 12px;
+  font-family: var(--font-root);
+
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}

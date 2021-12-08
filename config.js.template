@@ -1,0 +1,42 @@
+var Config = {
+  // css 变量
+  theme: {
+    "--color-text": "#adbac7",
+    "--color-bg": "#22272e",
+    "--color-primary": "#6495ed",
+    "--color-secondary": "",
+    "--font-root": "Consolas, \"Microsoft YaHei\", monospace",
+  },
+  // 搜索引擎配置
+  searchEngine: [
+    {
+      name: "Bing",
+      template: "https://bing.com/search?q=%s",
+      icon: "assets/icon/bing.ico"
+    },
+    {
+      name: "Google",
+      template: "https://google.com/search?q=%s",
+      icon: "assets/icon/google.ico"
+    },
+    {
+      name: "GitHub",
+      template: "https://github.com/search?q=%s&ref=opensearch",
+      icon: "assets/icon/github.ico"
+    },
+    {
+      name: "知乎",
+      template: "http://www.zhihu.com/search?q=%s",
+      icon: "assets/icon/zhihu.ico"
+    }
+  ],
+  // 书签
+  bookmarks:[
+    {
+      header: "头",
+      content: [
+        { name: "链接文本", url: "链接网址" },
+      ]
+    },
+  ]
+}
