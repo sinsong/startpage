@@ -6,8 +6,7 @@
 
   --searchbar-font-size: 24px;
   font-size: var(--searchbar-font-size);
-  border-radius: var(--searchbar-font-size);
-  /* box-shadow: 0 0 10px white; */
+  border-radius: calc(var(--searchbar-font-size) + 0.5em * 2);
 
   margin: 15px auto;
   padding: 0.5em 1em;
