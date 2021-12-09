@@ -94,8 +94,18 @@
     var keyword = encodeURIComponent(searchKeyword.value)
     var targetURL = search_template.replace('%s', keyword)
 
-    window.location.assign(targetURL)
-    searchKeyword.value = ""
+    try
+    {
+      window.location.assign(targetURL)
+    }
+    catch(error)
+    {
+      console.error(`${typeof error}: ${error.name} ${error.message}`);
+    }
+    finally
+    {
+      searchKeyword.value = ""
+    }
   }
 
   // tab
