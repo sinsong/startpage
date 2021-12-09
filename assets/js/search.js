@@ -3,7 +3,7 @@
   /** @type {HTMLDivElement} */
   let searchbar = document.querySelector('.searchbar')
   /** @type {HTMLInputElement} */
-  let search = searchbar.querySelector('#search')
+  let searchKeyword = searchbar.querySelector('#search')
   /** @type {HTMLButtonElement} */
   let selector = searchbar.querySelector('#search-engine-selector')
   /** @type {HTMLDivElement} */
@@ -16,13 +16,13 @@
 
   // 点击 搜索条 -> 输入栏获得焦点
   searchbar.addEventListener('click', ()=>{
-    search.focus()
+    searchKeyword.focus()
   })
   // 输入栏焦点 -> 搜索条 .active
-  search.addEventListener('focusin', ()=>{
+  searchKeyword.addEventListener('focusin', ()=>{
     searchbar.classList.add('active')
   })
-  search.addEventListener('focusout', ()=>{
+  searchKeyword.addEventListener('focusout', ()=>{
     searchbar.classList.remove('active')
   })
 
@@ -61,8 +61,6 @@
     event.stopPropagation() // 阻止冒泡，不会激活输入
   })
 
-  // 搜索引擎切换按钮的图标
-  icon = selector.querySelector('img')
   // 添加搜索引擎图标
   window.Config.searchEngine.forEach((value) => {
     var searchEngine = document.createElement('button')
@@ -77,10 +75,9 @@
         elem.classList.remove('active')
       })
       searchEngine.classList.add('active')
-      // icon.src = value.icon
       selector.style.backgroundImage = `url(${value.icon})`
       hide()
-      search.focus() // 激活输入
+      searchKeyword.focus() // 激活输入
     })
 
     selection.appendChild(searchEngine)
@@ -89,13 +86,38 @@
   // 默认使用第一个搜索引擎 - 帮你点一下
   selection.children[0].dispatchEvent(new MouseEvent('click'))
   
-  // 发起搜索
-  search.addEventListener('keydown', (event)=>{
-    if (!( event.keyCode == 13)) return
-    var keyword = encodeURIComponent(search.value)
+  // 搜索栏键盘操作
+
+  // 搜索
+  function search()
+  {
+    var keyword = encodeURIComponent(searchKeyword.value)
     var targetURL = search_template.replace('%s', keyword)
 
     window.location.assign(targetURL)
-    search.value = ""
+    searchKeyword.value = ""
+  }
+
+  // tab
+  function tabkey()
+  {
+    show()
+  }
+
+  searchKeyword.addEventListener('keydown', (event)=>{
+    // key 会有合并的按键 code 会分开
+    // 例如左右 Control 主键盘和小键盘的 Enter
+    switch (event.key)
+    {
+    case 'Tab':
+      tabkey()
+      break
+    case 'Enter':
+      search()
+      break
+    default:
+      return;
+      break
+    }
   })
 })()
