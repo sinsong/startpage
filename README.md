@@ -14,6 +14,7 @@
     - [🏷️ `bookmarks` 书签配置](#️-bookmarks-书签配置)
   - [第三方库](#第三方库)
     - [popper.js](#popperjs)
+    - [MiniMasonry.js](#minimasonryjs)
 
 ## 🚀 使用
 
@@ -137,3 +138,7 @@ https://unpkg.com/@popperjs/core@2/dist/umd/popper.js
 Production version
 https://unpkg.com/@popperjs/core@2
 ```
+
+### MiniMasonry.js
+
+https://github.com/Spope/MiniMasonry.js/

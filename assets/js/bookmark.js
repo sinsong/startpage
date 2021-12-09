@@ -26,4 +26,12 @@ window.Config.bookmarks.forEach((bookmark_group) => {
   dom_bookmark_group.appendChild(dom_ul)
 
   bookmark_section.appendChild(dom_bookmark_group)
+
+  // https://spope.github.io/MiniMasonry.js/
+  var masonry = new MiniMasonry({
+    baseWidth: 200,
+    container: '.bookmark',
+    gutter: 30,
+    surroundingGutter: false,
+  })
 })
