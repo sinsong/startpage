@@ -8,7 +8,7 @@
   font-size: var(--searchbar-font-size);
   border-radius: calc(var(--searchbar-font-size) + 0.5em * 2);
 
-  margin: 15px auto;
+  margin: 0 auto;
   padding: 0.5em 1em;
 
   border: 1px solid hsl(215, 15%, 36%);

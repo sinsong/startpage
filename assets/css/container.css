@@ -14,20 +14,20 @@
 
 /* 响应式布局 */
 /* screen < 992px */
-.container > section.search
+.container > section.clock
 {
-  margin-top: 16vh;
+  margin-top: 8vh;
 }
 /* screen > 992px */
 @media screen and (min-width: 992px)
 {
-  .container > section.search
+  .container > section.clock
   {
-    margin-top: 32vh;
+    margin-top: 16vh;
   }
 }
 
 .container > section:not(:last-child)
 {
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }

@@ -1,0 +1,6 @@
+#time
+{
+  font-size: 10vh;
+  /* font-size: 3.8vw; */
+  filter: drop-shadow(0 0 0.3em hsl(215, 15%, 36%));
+}
