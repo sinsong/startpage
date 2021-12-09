@@ -85,6 +85,8 @@
 
   // 默认使用第一个搜索引擎 - 帮你点一下
   selection.children[0].dispatchEvent(new MouseEvent('click'))
+  // 这里还被迫 searchKeyword.focus()
+  // 一定是特性！
   
   // 搜索栏键盘操作
 
