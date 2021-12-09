@@ -28,6 +28,11 @@ var Config = {
       name: "知乎",
       template: "http://www.zhihu.com/search?q=%s",
       icon: "assets/icon/zhihu.ico"
+    },
+    {
+      name: "Stack Overflow",
+      template: "https://stackoverflow.com/search?q=%s",
+      icon: "assets/icon/stackoverflow.ico"
     }
   ],
   // 书签
