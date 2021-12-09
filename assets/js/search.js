@@ -1,8 +1,12 @@
 ;(function(){
   // dom
+  /** @type {HTMLDivElement} */
   let searchbar = document.querySelector('.searchbar')
+  /** @type {HTMLInputElement} */
   let search = searchbar.querySelector('#search')
+  /** @type {HTMLButtonElement} */
   let selector = searchbar.querySelector('#search-engine-selector')
+  /** @type {HTMLDivElement} */
   let selection = document.querySelector('#search-engine-selections')
   
   // 搜索模板
@@ -61,8 +65,8 @@
   icon = selector.querySelector('img')
   // 添加搜索引擎图标
   window.Config.searchEngine.forEach((value) => {
-    var searchEngine = document.createElement('img')
-    searchEngine.src = value.icon
+    var searchEngine = document.createElement('button')
+    searchEngine.style.backgroundImage = `url(${value.icon})`
     searchEngine.alt = value.name
     searchEngine.classList.add('search-engine')
 
@@ -73,7 +77,8 @@
         elem.classList.remove('active')
       })
       searchEngine.classList.add('active')
-      icon.src = value.icon
+      // icon.src = value.icon
+      selector.style.backgroundImage = `url(${value.icon})`
       hide()
       search.focus() // 激活输入
     })

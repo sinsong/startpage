@@ -11,26 +11,35 @@
 
   margin: 15px auto;
   padding: 0.5em 1em;
-  width: 100%;
 
   border: 1px solid hsl(215, 15%, 36%);
 
   transition: box-shadow .15s ease-in-out;
 }
 
+/* 搜索条响应式宽度 */
+
+/* screen < 992px */
+.searchbar
+{
+  width: 100%;
+}
+/* screen ∈ 992px ~ 1200px */
 @media screen and (min-width: 992px) {
   .searchbar
   {
     width: 62vw;
   }
 }
-
+/* screen > 1200px */
 @media screen and (min-width: 1200px) {
   .searchbar
   {
     width: 42vw;
   }
 }
+
+/* 搜索条用户体验 */
 
 .searchbar:hover
 {
@@ -42,7 +51,8 @@
 {
   border: 1px solid transparent;
   background-color: hsl(215, 15%, 26%);
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+  /* box-shadow: 0 0 10px rgba(255, 255, 255, 0.6); */
+  border: 1px solid var(--color-primary);
 }
 
 /* 输入框 */
@@ -62,24 +72,33 @@ input#search
 
 #search-engine-selector
 {
-  background: none;
-  border: none;
+  /* 禁止收缩 */
+  flex-shrink: 0;
+
   width: 32px;
   height: 32px;
+
   cursor: pointer;
+  /* 清除按钮样式 */
+  background: none;
+  border: none;
 }
 
 /* 搜索引擎切换 菜单 */
 
 #search-engine-selections
 {
-  display: none;
+  /* 默认不可见 */
+  display: none; 
+
   background-color: var(--color-bg);
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+  border: 1px solid hsl(215, 15%, 36%);
+  /* box-shadow: 0 0 10px rgba(255, 255, 255, 0.6); */
   padding: 5px;
 }
 
+/* 菜单显示 */
 #search-engine-selections[data-show]
 {
   display: block;
@@ -91,9 +110,21 @@ input#search
 {
   display: block;
   margin: 5px;
-  padding: 5px;
+
+  /* 手动实现 padding: 5px */
+  width:  calc(32px + 5px * 2);
+  height: calc(32px + 5px * 2);
+
   border-radius: 5px;
   cursor: pointer;
+
+  /* 清除按钮样式 */
+  border: none;
+  background-color: transparent;
+
+  /* 背景图 */
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .search-engine:hover
@@ -104,5 +135,5 @@ input#search
 .search-engine.active
 {
   cursor: default;
-  background-color: inherit;
+  background-color: transparent;
 }
