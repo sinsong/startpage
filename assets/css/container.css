@@ -10,7 +10,21 @@
 .container > section.search
 {
   width: 100%;
-  margin-top: 36vh;
+}
+
+/* 响应式布局 */
+/* screen < 992px */
+.container > section.search
+{
+  margin-top: 16vh;
+}
+/* screen > 992px */
+@media screen and (min-width: 992px)
+{
+  .container > section.search
+  {
+    margin-top: 32vh;
+  }
 }
 
 .container > section:not(:last-child)
