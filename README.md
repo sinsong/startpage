@@ -2,18 +2,35 @@
 
 起始页 (正在施工中)
 
-## 使用
+## 👇 目录
+
+- [startpage](#startpage)
+  - [👇 目录](#-目录)
+  - [🚀 使用](#-使用)
+  - [✨ 特性](#-特性)
+  - [⚙️ 配置](#️-配置)
+    - [🎨 `theme` "主题" 系统](#-theme-主题-系统)
+    - [🔎 `searchEngine` 搜索引擎配置](#-searchengine-搜索引擎配置)
+    - [🏷️ `bookmarks` 书签配置](#️-bookmarks-书签配置)
+  - [第三方库](#第三方库)
+    - [popper.js](#popperjs)
+
+## 🚀 使用
 
 `index.html`: 相对路径，静态网页
 
-## 特性
+新标签页的插件:
+- Chromium(Chrome): [Custom New Tab URL](https://chrome.google.com/webstore/detail/custom-new-tab-url/mmjbdbjnoablegbkcklggeknkfcjkjia)
+- Firefox: [Custom New Tab Page](https://addons.mozilla.org/en-US/firefox/addon/custom-new-tab-page/?src=search)
+
+## ✨ 特性
 
 - [x] 搜索
 - [x] 搜索引擎配置和切换
 - [x] 书签和书签配置
 - [ ] 主题系统
 
-## 配置
+## ⚙️ 配置
 
 `config.js` 是使用的配置文件，首次使用请复制 `config.js.template` 并且改名为 `config.js`(已加入 `.gitignore`)
 
@@ -26,7 +43,7 @@ var Config = {
 }
 ```
 
-### `theme` "主题" 系统
+### 🎨 `theme` "主题" 系统
 
 使用 `assets/js/cssvariable.js` 将 `theme` 中的键值对映射为 CSS 变量。
 
@@ -65,7 +82,7 @@ theme: {
 |`--color-secondary`| 辅助色 |
 |`--font-root`      | 默认字体 |
 
-### `searchEngine` 搜索引擎配置
+### 🔎 `searchEngine` 搜索引擎配置
 
 `searchEngine` 配置是一个数组，每个元素是一个对象，代表一个搜索引擎
 
@@ -90,7 +107,7 @@ theme: {
    ```
 5. 将模板字符串的 `{searchTerms}` 手动替换成 `%s`。例如 `search?q={searchTerms}` 改为 `search?q=%s` 即可
 
-### `bookmarks` 书签配置
+### 🏷️ `bookmarks` 书签配置
 
 `bookmarks` 是一个数组，其每个元素是一个书签集合
 
