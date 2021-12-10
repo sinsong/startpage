@@ -104,10 +104,6 @@
     {
       console.error(`${typeof error}: ${error.name} ${error.message}`);
     }
-    finally
-    {
-      searchKeyword.value = ""
-    }
   }
 
   // tab
