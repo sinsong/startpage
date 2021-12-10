@@ -1,7 +1,8 @@
 section.bookmark
 {
   position: relative;
-  width: 100%;
+  width: 90%;
+  margin: 0 auto;
   font-size: 18px;
 }
 
